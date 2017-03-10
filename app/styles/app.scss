@@ -5,6 +5,7 @@ $fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts';
 $blue: hsl(218, 71%, 53%);
 $primary: $blue;
 $white-bis: hsl(0, 0%, 98%);
+$grey-lighter: hsl(0, 0%, 86%);
 $family-sans-serif: 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
 $m-gutter: 1rem;
 @import 'bulma';
@@ -39,4 +40,17 @@ $m-gutter: 1rem;
   & > * + * {
     margin-left: $m-gutter;
   }
+}
+
+.add-button {
+  text-align: right;
+}
+
+.level-item {
+  flex-direction: column;
+}
+
+.card {
+  border-top: 1px $grey-lighter solid;
+  box-shadow: none;
 }

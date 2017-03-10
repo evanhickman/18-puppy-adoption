@@ -2,7 +2,7 @@
   <div class="app">
     <nav class="nav">
       <div class="nav-left is-brand">
-        <a href="#" class="nav-item">Puppies</a>
+        <router-link :to="{ name: 'index' }" class="nav-item">Puppies</router-link>
       </div>
       <div class="nav-right">
         <router-link :to="{ name: 'index' }" class="nav-item">All Puppies</router-link>
@@ -28,7 +28,7 @@
                     <div class="content">
                       <div>Geraldine Beane</div>
                       <!-- TODO: Update this to add id params -->
-                      <a :to="{ name: 'detail' }"><small>More Info</small></a>
+                      <router-link :to="{ name: 'detail' }"><small>Read More</small></router-link>
                     </div>
                   </div>
                 </article>
@@ -44,7 +44,7 @@
                     <div class="content">
                       <div>Geraldine Beane</div>
                       <!-- TODO: Update this to add id params -->
-                      <a :to="{ name: 'detail' }"><small>More Info</small></a>
+                      <router-link :to="{ name: 'detail' }"><small>Read More</small></router-link>
                     </div>
                   </div>
                 </article>
@@ -60,7 +60,7 @@
                     <div class="content">
                       <div>Geraldine Beane</div>
                       <!-- TODO: Update this to add id params -->
-                      <a :to="{ name: 'detail' }"><small>More Info</small></a>
+                      <router-link :to="{ name: 'detail' }"><small>Read More</small></router-link>
                     </div>
                   </div>
                 </article>
@@ -76,7 +76,7 @@
                     <div class="content">
                       <div>Geraldine Beane</div>
                       <!-- TODO: Update this to add id params -->
-                      <a :to="{ name: 'detail' }"><small>More Info</small></a>
+                      <router-link :to="{ name: 'detail' }"><small>Read More</small></router-link>
                     </div>
                   </div>
                 </article>
@@ -92,7 +92,7 @@
                     <div class="content">
                       <div>Geraldine Beane</div>
                       <!-- TODO: Update this to add id params -->
-                      <a :to="{ name: 'detail' }"><small>More Info</small></a>
+                      <router-link :to="{ name: 'detail' }"><small>Read More</small></router-link>
                     </div>
                   </div>
                 </article>
@@ -108,7 +108,7 @@
                     <div class="content">
                       <div>Geraldine Beane</div>
                       <!-- TODO: Update this to add id params -->
-                      <a :to="{ name: 'detail' }"><small>More Info</small></a>
+                      <router-link :to="{ name: 'detail' }"><small>Read More</small></router-link>
                     </div>
                   </div>
                 </article>
