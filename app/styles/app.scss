@@ -1,6 +1,27 @@
 // @import 'yoga';
 // @import 'normalize';
 
-// $fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts';
-// @import 'font-awesome';
+$fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts';
+$blue: hsl(218, 71%, 53%);
+$primary: $blue;
+$white-bis: hsl(0, 0%, 98%);
+$family-sans-serif: 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+@import 'bulma';
+@import 'font-awesome';
 @import 'box-sizing';
+
+.nav {
+  padding: 1rem;
+  background: $primary;
+
+  a {
+    &.nav-item {
+      color: $white-bis;
+    }
+  }
+}
+
+.is-brand {
+  font-size: 1.2rem;
+  font-weight: normal;
+}
