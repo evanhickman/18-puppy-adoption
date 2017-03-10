@@ -28,3 +28,15 @@ $m-gutter: 1rem;
   font-size: 1.2rem;
   font-weight: normal;
 }
+
+.input-name {
+  margin: $m-gutter 0 0;
+}
+
+.action-buttons {
+  margin-top: 0.5rem;
+
+  & > * + * {
+    margin-left: $m-gutter;
+  }
+}
