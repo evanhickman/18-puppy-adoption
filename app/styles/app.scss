@@ -6,12 +6,15 @@ $blue: hsl(218, 71%, 53%);
 $primary: $blue;
 $white-bis: hsl(0, 0%, 98%);
 $family-sans-serif: 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+$m-gutter: 1rem;
 @import 'bulma';
 @import 'font-awesome';
 @import 'box-sizing';
+@import 'reset';
+@import 'layout';
 
 .nav {
-  padding: 1rem;
+  padding: $m-gutter;
   background: $primary;
 
   a {
