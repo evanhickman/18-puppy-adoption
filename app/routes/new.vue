@@ -22,9 +22,9 @@
       <p>
         <input type="text" v-model="formValues.breed" class="input">
       </p>
-      <p class="input-name">imageUrl</p>
+      <p class="input-name">Image URL</p>
       <p>
-        <input type="text" v-model="formValues.imageUrl" class="input">
+        <input type="text" v-model="formValues.image_url" class="input">
       </p>
       <p class="input-name">description</p>
       <p>
@@ -39,6 +39,8 @@
 </template>
 
 <script>
+import store from '../store';
+import { create } from '../actions/puppy';
 export default {
   data() {
     return {
@@ -48,14 +50,18 @@ export default {
         sex: '',
         color: '',
         breed: '',
-        imageUrl: '',
+        image_url: '',
         description: '',
       },
     };
   },
 
   methods: {
-
+    submit() {
+      store.dispatch(create(this.formValues)).then(() => {
+        this.$router.push({ name: 'index' });
+      });
+    },
   },
 };
 </script>

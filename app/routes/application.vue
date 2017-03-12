@@ -17,98 +17,18 @@
               <p class="panel-heading">
                 Adopt a Friend
               </p>
-              <div class="panel-block">
+              <div v-for="puppy in puppies" class="panel-block">
                 <article class="media">
                   <figure class="media-left">
-                    <p class="image">
-                      <img src="http://bulma.io/images/placeholders/64x64.png">
+                    <p class="image is-64x64">
+                      <img :src="puppy.image_url">
                     </p>
                   </figure>
                   <div class="media-content">
                     <div class="content">
-                      <div>Geraldine Beane</div>
+                      <div>{{ puppy.name }}</div>
                       <!-- TODO: Update this to add id params -->
-                      <router-link :to="{ name: 'detail' }"><small>Read More</small></router-link>
-                    </div>
-                  </div>
-                </article>
-              </div>
-              <div class="panel-block">
-                <article class="media">
-                  <figure class="media-left">
-                    <p class="image">
-                      <img src="http://bulma.io/images/placeholders/64x64.png">
-                    </p>
-                  </figure>
-                  <div class="media-content">
-                    <div class="content">
-                      <div>Geraldine Beane</div>
-                      <!-- TODO: Update this to add id params -->
-                      <router-link :to="{ name: 'detail' }"><small>Read More</small></router-link>
-                    </div>
-                  </div>
-                </article>
-              </div>
-              <div class="panel-block">
-                <article class="media">
-                  <figure class="media-left">
-                    <p class="image">
-                      <img src="http://bulma.io/images/placeholders/64x64.png">
-                    </p>
-                  </figure>
-                  <div class="media-content">
-                    <div class="content">
-                      <div>Geraldine Beane</div>
-                      <!-- TODO: Update this to add id params -->
-                      <router-link :to="{ name: 'detail' }"><small>Read More</small></router-link>
-                    </div>
-                  </div>
-                </article>
-              </div>
-              <div class="panel-block">
-                <article class="media">
-                  <figure class="media-left">
-                    <p class="image">
-                      <img src="http://bulma.io/images/placeholders/64x64.png">
-                    </p>
-                  </figure>
-                  <div class="media-content">
-                    <div class="content">
-                      <div>Geraldine Beane</div>
-                      <!-- TODO: Update this to add id params -->
-                      <router-link :to="{ name: 'detail' }"><small>Read More</small></router-link>
-                    </div>
-                  </div>
-                </article>
-              </div>
-              <div class="panel-block">
-                <article class="media">
-                  <figure class="media-left">
-                    <p class="image">
-                      <img src="http://bulma.io/images/placeholders/64x64.png">
-                    </p>
-                  </figure>
-                  <div class="media-content">
-                    <div class="content">
-                      <div>Geraldine Beane</div>
-                      <!-- TODO: Update this to add id params -->
-                      <router-link :to="{ name: 'detail' }"><small>Read More</small></router-link>
-                    </div>
-                  </div>
-                </article>
-              </div>
-              <div class="panel-block">
-                <article class="media">
-                  <figure class="media-left">
-                    <p class="image">
-                      <img src="http://bulma.io/images/placeholders/64x64.png">
-                    </p>
-                  </figure>
-                  <div class="media-content">
-                    <div class="content">
-                      <div>Geraldine Beane</div>
-                      <!-- TODO: Update this to add id params -->
-                      <router-link :to="{ name: 'detail' }"><small>Read More</small></router-link>
+                      <router-link :to="{ name: 'detail', params: { id: puppy.id } }"><small>Read More</small></router-link>
                     </div>
                   </div>
                 </article>
@@ -127,9 +47,7 @@
 
 <script>
 import store from '../store';
-import {
-  findAll
-} from '../actions/puppy';
+import { findAll } from '../actions/puppy';
 
 
 export default {

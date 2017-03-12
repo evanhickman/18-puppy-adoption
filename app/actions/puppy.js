@@ -1,4 +1,12 @@
-const apiUrl = 'https://tiy-tn-class-api-fall-16.herokuapp.com/puppies/ryan';
+const apiUrl = 'https://tiy-tn-class-api-fall-16.herokuapp.com/puppies/evanh';
+const jsonHeaders = {
+  Accept: 'application/json',
+  'Content-Type': 'application/json'
+};
+
+function parseJson(r) {
+  return r.json();
+}
 
 export function findAllComplete(data = []) {
   return {
@@ -11,4 +19,35 @@ export function findAll() {
   return dispatch => fetch(apiUrl)
     .then(r => r.json())
     .then(puppies => dispatch(findAllComplete(puppies)));
+}
+
+export function findOneComplete(data = {}) {
+  return {
+    type: 'PUPPY@ONE_COMPLETE',
+    data,
+  };
+}
+
+export function findOne(id) {
+  return dispatch => fetch(apiUrl / id)
+  .then(r => r.json())
+  .then(puppy => dispatch(findOneComplete(puppy)));
+}
+
+export function createComplete(data = []) {
+  return {
+    type: 'PUPPY@CREATE_COMPLETE',
+    data,
+  };
+}
+
+export function create(formData) {
+  return dispatch => fetch(apiUrl, {
+    method: 'POST',
+    headers: jsonHeaders,
+    body: JSON.stringify(formData),
+  }).then(parseJson)
+    .then((puppy) => {
+      dispatch(createComplete(puppy));
+    });
 }

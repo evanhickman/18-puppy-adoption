@@ -18,10 +18,10 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>Geraldine Beane</td>
-        <td>4</td>
-        <td><router-link :to="{ name: 'detail' }">Read More</router-link></td>
+      <tr v-for="puppy in puppies.filter((p) => p.adopted === false)">
+        <td>{{ puppy.name }}</td>
+        <td>{{ puppy.age }}</td>
+        <td><router-link :to="{ name: 'detail', params: { id: puppy.id } }">Read More</router-link></td>
       </tr>
     </tbody>
     </table>
@@ -39,25 +39,10 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Geraldine Beane</td>
-            <td>4</td>
-            <td><router-link :to="{ name: 'detail' }">Read More</router-link></td>
-          </tr>
-          <tr>
-            <td>Geraldine Beane</td>
-            <td>4</td>
-            <td><router-link :to="{ name: 'detail' }">Read More</router-link></td>
-          </tr>
-          <tr>
-            <td>Geraldine Beane</td>
-            <td>4</td>
-            <td><router-link :to="{ name: 'detail' }">Read More</router-link></td>
-          </tr>
-          <tr>
-            <td>Geraldine Beane</td>
-            <td>4</td>
-            <td><router-link :to="{ name: 'detail' }">Read More</router-link></td>
+          <tr v-for="puppy in puppies.filter((p) => p.adopted === true)">
+            <td>{{ puppy.name }}</td>
+            <td>{{ puppy.age }}</td>
+            <td><router-link :to="{ name: 'detail', params: { id: puppy.id } }">Read More</router-link></td>
           </tr>
         </tbody>
         </table>
@@ -65,9 +50,18 @@
 </template>
 
 <script>
+import store from '../store';
+import { findAll } from '../actions/puppy';
+
 export default {
   data() {
-    return {};
+    return {
+      puppies: this.$select('puppies'),
+    };
+  },
+
+  created() {
+    store.dispatch(findAll());
   },
 
   methods: {
