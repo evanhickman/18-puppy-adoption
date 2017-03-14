@@ -54,6 +54,7 @@ import store from '../store';
 import { findAll } from '../actions/puppy';
 
 export default {
+  name: 'Index',
   data() {
     return {
       puppies: this.$select('puppies'),

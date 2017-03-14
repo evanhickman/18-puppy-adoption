@@ -42,6 +42,7 @@
 import store from '../store';
 import { create } from '../actions/puppy';
 export default {
+  name: 'New',
   data() {
     return {
       formValues: {

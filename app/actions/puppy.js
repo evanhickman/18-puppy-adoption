@@ -29,7 +29,7 @@ export function findOneComplete(data = {}) {
 }
 
 export function findOne(id) {
-  return dispatch => fetch(apiUrl / id)
+  return dispatch => fetch(`${apiUrl} / ${id}`)
   .then(r => r.json())
   .then(puppy => dispatch(findOneComplete(puppy)));
 }
@@ -68,4 +68,8 @@ export function update(id, formData) {
     .then((puppy) => {
       dispatch(updateComplete(puppy));
     });
+}
+
+export function toggleAdopted(puppy) {
+  return update(puppy.id, { ...puppy, adopted: !puppy.adopted });
 }
