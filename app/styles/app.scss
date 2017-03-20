@@ -1,6 +1,56 @@
 // @import 'yoga';
 // @import 'normalize';
 
-// $fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts';
-// @import 'font-awesome';
+$fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts';
+$blue: hsl(218, 71%, 53%);
+$primary: $blue;
+$white-bis: hsl(0, 0%, 98%);
+$grey-lighter: hsl(0, 0%, 86%);
+$family-sans-serif: 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+$m-gutter: 1rem;
+@import 'bulma';
+@import 'font-awesome';
 @import 'box-sizing';
+@import 'reset';
+@import 'layout';
+
+.nav {
+  padding: $m-gutter;
+  background: $primary;
+
+  a {
+    &.nav-item {
+      color: $white-bis;
+    }
+  }
+}
+
+.is-brand {
+  font-size: 1.2rem;
+  font-weight: normal;
+}
+
+.input-name {
+  margin: $m-gutter 0 0;
+}
+
+.action-buttons {
+  margin-top: 0.5rem;
+
+  & > * + * {
+    margin-left: $m-gutter;
+  }
+}
+
+.add-button {
+  text-align: right;
+}
+
+.level-item {
+  flex-direction: column;
+}
+
+.card {
+  border-top: 1px $grey-lighter solid;
+  box-shadow: none;
+}

@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+  font: $family-sans-serif;
+}
+
+ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+img {
+  align-self: center;
+  max-width: 100%;
+}
+
+h1 {
+  font-size: 1.5rem;
+  font-weight: 200;
+}
+
+a {
+  text-decoration: none;
+}
