@@ -3,7 +3,7 @@
       <div v-if="currentPuppy">
         <p class="title has-text-centered">
           {{ currentPuppy.name }}
-          <a v-on:click.prevent="adoptMe" href="#" class="button is-primary" v-bind:class="{'is-success': currentPuppy.adopted }">
+          <a @click="adoptMe" href="#" class="button is-primary" v-bind:class="{'is-success': currentPuppy.adopted }">
             <span><i class="fa fa-paw fa-fw" aria-hidden="true"></i></span>
             <span v-if="currentPuppy.adopted"> I'm Adopted!</span>
             <span v-else>Adopt Me!</span>
@@ -56,7 +56,7 @@ export default {
   name: 'Detail',
   data() {
     return {
-      currentPuppy: {},
+      currentPuppy: null,
       puppies: this.$select('puppies'),
     };
   },

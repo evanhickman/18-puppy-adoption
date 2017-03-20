@@ -1,4 +1,4 @@
-const apiUrl = 'https://tiy-tn-class-api-fall-16.herokuapp.com/puppies/evanh';
+const apiUrl = 'https://tiy-tn-class-api-fall-16.herokuapp.com/puppies/eh';
 const jsonHeaders = {
   Accept: 'application/json',
   'Content-Type': 'application/json'
@@ -29,7 +29,7 @@ export function findOneComplete(data = {}) {
 }
 
 export function findOne(id) {
-  return dispatch => fetch(`${apiUrl} / ${id}`)
+  return dispatch => fetch(`${apiUrl}/${id}`)
   .then(r => r.json())
   .then(puppy => dispatch(findOneComplete(puppy)));
 }
@@ -60,8 +60,8 @@ export function updateComplete(data = []) {
 }
 
 export function update(id, formData) {
-  return dispatch => fetch(apiUrl, {
-    method: 'POST',
+  return dispatch => fetch(`${apiUrl}/${id}`, {
+    method: 'PUT',
     headers: jsonHeaders,
     body: JSON.stringify(formData),
   }).then(parseJson)
